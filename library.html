@@ -79,15 +79,15 @@
 <section class="header1 mbr-fullscreen cid-s48MCQYojq mbr-parallax-background" id="header1-f">
 
     <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(255, 255, 255);"></div>    
-    <div style="width: 90%; padding: 10px; margin: auto; border-radius: 10px;" class="container bg-white shadow">
-        <div style="width:90%; padding:10px;" class="container bg-white">
+    <div style="width: 90%; padding: 10px; margin: auto; border-radius: 10px; padding-top: 30px;" class="container bg-white shadow">
+        <div style="width:90%; padding:10px; margin:auto;" class="container bg-white">
         <form action="" method="post">
             <div class="form-group">
                 <label for="txtCourse">Select Your Course</label>
                 <select class="form-control" id="" name="txtCourse">
                 <option>BA-ARABIC</option>
                 <option>BA-ECONOMICS</option>
-                 <option>BA-ENGLISH</option>
+                <option>BA-ENGLISH</option>
                 <option>BA-HISTORY</option>
                 <option>BA-MASS-COMMUNICATION</option>
                 <option>BSC-CHEMISTRY</option>
@@ -131,38 +131,33 @@
         <br>
         <div style="padding:10px; border-radius:10px;" class="container bg-white shadow">
     
-            <!-- <?php
+        <!-- <?php
     
-            include("conn.php");
-    
-            if(isset($_POST['search'])){
-    
-                $course = $_POST['txtCourse'];
-                $semester = $_POST['txtSemester'];
-            
-                $sql = "SELECT id,title,link FROM library WHERE course='$course' AND semester='$semester'";
-    
-                $result = mysqli_query($con,$sql);
-                
-                if(mysqli_num_rows($result)>0){
-                    while($row = mysqli_fetch_assoc($result)){
-                        echo "
-                        
-                        <div class='card'>
-                            <h6 class='card-header'>ID : ".$row['id']."</br>".$row['title']."</h6>
-                            <div class='card-body'>
-                                <a href='".$row['link']."' class='btn btn-success'>Download</a>
-                            </div>
-                        </div>
-                        </br>
-                        ";
-                    }
-                }else{
-                    echo "<label class='form-ccontrol'>No Data Available</label>";
-                }   	
-    }
-            mysqli_close($con);
-    
+                include("conn.php");
+                if(isset($_POST['search'])){   
+
+                    $course = $_POST['txtCourse'];
+                    $semester = $_POST['txtSemester'];
+                    $sql = "SELECT id,title,link FROM library WHERE course='$course' AND semester='$semester'";  
+                    $result = mysqli_query($con,$sql);
+                    
+                    if(mysqli_num_rows($result)>0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "
+                                <div class='card'>
+                                    <h6 class='card-header'>ID : ".$row['id']."</br>".$row['title']."</h6>
+                                    <div class='card-body'>
+                                        <a href='".$row['link']."' class='btn btn-success'>Download</a>
+                                    </div>
+                                </div>
+                                </br>
+                            ";
+                        }
+                    }else{
+                        echo "<label class='form-ccontrol'>No Data Available</label>";
+                    }   	
+                }
+                mysqli_close($con);
         ?> -->
             
     </div>
