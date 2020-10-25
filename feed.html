@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
   <meta name="description" content="">
   
-  <title>Home</title>
+  <title>Feedback</title>
 
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -70,9 +70,12 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="library.html">Library</a></li>
-                    <li class="nav-item active"><a class="nav-link link text-white display-4" href="#">
-                            Feedback</a>
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="library.html">Library</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link link text-white display-4" href="#">Feedback</a>
                     </li>
                 </ul>               
             </div>
@@ -139,3 +142,27 @@
     </div>
 </footer>
 </html>
+
+<!-- <?php
+
+    include "conn.php";
+
+    if(isset($_POST["btn"])){
+
+        $name = $_POST["txt_name"];
+        $email = $_POST["txt_email"];
+        $feed = $_POST["txt_area"];
+
+        $sql = " INSERT INTO feedback (name,email,feedback) VALUES('$name','$email','$feed')";
+
+        $a = mysqli_query($con,$sql);
+
+        if($con->query($a)==TRUE){
+            alert "Feedback submitted successfully";
+        }else{
+            alert "something went wrong!!!";
+        }
+
+    }
+
+?> -->

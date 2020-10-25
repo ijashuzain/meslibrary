@@ -1,3 +1,6 @@
+<!-- <?php
+ include("conn.php");
+?> -->
 <!DOCTYPE html>
 <html  >
 <head>
@@ -9,7 +12,7 @@
   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
   <meta name="description" content="">
   
-  <title>Library</title>
+  <title>Upload</title>
 
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -127,43 +130,25 @@
                     <option>6</option>
                     <option>General</option>
                 </select>
-              </div>
+            </div>
+            <div class="form-group">
+                <label for="txtTitle">Title</label>
+                <input class="form-control" type="text" name="txtTitle">
+            </div>
+            <div class="from-group">
+                <label for="txtLink">Link</label>
+                <input class="form-control" type="text" name="txtLink">
+            </div>
+            <br>
             <div class="form-group text-center">
-                <input class="btn btn-success" type="submit" name="search">
+                <input class="btn btn-success" type="submit" name="btn" value="Upload">
             </div>
         </form>
         <br>
         <br>
         <div style="padding:10px; border-radius:10px;" class="container bg-white shadow">
     
-        <!-- <?php
-    
-                include("conn.php");
-                if(isset($_POST['search'])){   
-
-                    $course = $_POST['txtCourse'];
-                    $semester = $_POST['txtSemester'];
-                    $sql = "SELECT id,title,link FROM library WHERE course='$course' AND semester='$semester'";  
-                    $result = mysqli_query($con,$sql);
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_assoc($result)){
-                            echo "
-                                <div class='card'>
-                                    <h6 class='card-header'>ID : ".$row['id']."</br>".$row['title']."</h6>
-                                    <div class='card-body'>
-                                        <a href='".$row['link']."' class='btn btn-success'>Download</a>
-                                    </div>
-                                </div>
-                                </br>
-                            ";
-                        }
-                    }else{
-                        echo "<label class='form-ccontrol'>No Data Available</label>";
-                    }   	
-                }
-                mysqli_close($con);
-        ?> -->
+        
             
     </div>
     </div>
@@ -198,3 +183,32 @@
     </div>
 </footer>
 </html>
+<!-- <?php
+    if(isset($_POST['btn'])){
+
+        $course = $_POST['txtCourse'];
+        $semester = $_POST['txtSemester'];
+        $title = $_POST['txtTitle'];
+        $link = $_POST['txtLink'];
+
+        $a = mysqli_query($con," INSERT INTO library (title,course,semester,link) VALUES('$title','$course','$semester','$link')");
+
+        if($con->query($a)==TRUE){
+            ?>
+
+            <script type="text/javascript">alert("Uploaded Successfully")</script>
+            
+            <?php
+
+            echo "Uploaded";
+
+        }else{
+            ?>
+
+            <script type="text/javascript">alert("something went wrong ".<?php echo $sql."<br>".$con->error; ?>)</script>
+            
+            <?php
+        }
+
+    }
+?> -->
